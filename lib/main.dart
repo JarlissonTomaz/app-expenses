@@ -75,6 +75,11 @@ class MyHomeApp extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: Text(
                       tr.value.toString(),
+                      style: const TextStyle(
+                        color: Colors.purple,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Column(
