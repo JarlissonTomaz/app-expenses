@@ -35,19 +35,22 @@ class MyHomeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: Column(
       children: [
-        SizedBox(
+        const SizedBox(
           width: double.infinity,
           child: Card(
             elevation: 5,
             child: Text('Gráfico'),
           ),
         ),
-        Card(
-          child: Text('Lista de transações'),
-        )
+        Column(
+            children: _transactions.map((tr) {
+          return Card(
+            child: Text(tr.title),
+          );
+        }).toList()),
       ],
     ));
   }
