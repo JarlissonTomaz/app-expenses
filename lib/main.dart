@@ -63,7 +63,20 @@ class MyHomeApp extends StatelessWidget {
               return Card(
                   child: Row(
                 children: [
-                  Text(tr.value.toString()),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 2,
+                      ),
+                    ),
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 10),
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      tr.value.toString(),
+                    ),
+                  ),
                   Column(
                     children: [
                       Text(tr.title),
