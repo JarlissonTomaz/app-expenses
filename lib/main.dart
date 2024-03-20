@@ -36,22 +36,35 @@ class MyHomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        const SizedBox(
-          width: double.infinity,
-          child: Card(
-            elevation: 5,
-            child: Text('Gráfico'),
+        appBar: AppBar(
+          title: const Text(
+            'Expenses',
+            style: TextStyle(color: Colors.white),
           ),
+          backgroundColor: Colors.purple[300],
         ),
-        Column(
-            children: _transactions.map((tr) {
-          return Card(
-            child: Text(tr.title),
-          );
-        }).toList()),
-      ],
-    ));
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(
+              width: double.infinity,
+              child: Card(
+                elevation: 5,
+                color: Colors.purple,
+                child: Text(
+                  'Gráfico',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            Column(
+                children: _transactions.map((tr) {
+              return Card(
+                child: Text(tr.title),
+              );
+            }).toList()),
+          ],
+        ));
   }
 }
