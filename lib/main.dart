@@ -34,6 +34,9 @@ class MyHomeApp extends StatelessWidget {
     )
   ];
 
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,15 +113,18 @@ class MyHomeApp extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                const TextField(
-                  decoration: InputDecoration(hintText: 'Título'),
+                TextField(
+                  controller: titleController,
+                  decoration: const InputDecoration(hintText: 'Título'),
                 ),
-                const TextField(
-                  decoration: InputDecoration(hintText: 'Valor (R\$)'),
+                TextField(
+                  controller: valueController,
+                  decoration: const InputDecoration(hintText: 'Valor (R\$)'),
                 ),
                 TextButton(
                   onPressed: () {
-                    return null;
+                    print(titleController);
+                    print(valueController);
                   },
                   child: const Text('Nova transação'),
                 )
