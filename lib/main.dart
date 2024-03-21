@@ -22,7 +22,7 @@ class MyHomeApp extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'Roupa Nova',
-      value: 50,
+      value: 145.3,
       date: DateTime.now(),
     ),
     Transaction(
@@ -66,7 +66,7 @@ class MyHomeApp extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.black,
+                        color: Colors.purple,
                         width: 2,
                       ),
                     ),
@@ -74,7 +74,7 @@ class MyHomeApp extends StatelessWidget {
                         horizontal: 15, vertical: 10),
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      tr.value.toString(),
+                      'R\$ ${tr.value.toStringAsFixed(2)}',
                       style: const TextStyle(
                         color: Colors.purple,
                         fontSize: 20,
